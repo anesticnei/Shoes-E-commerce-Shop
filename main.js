@@ -49,13 +49,8 @@ function displaycart(a){
     else {
         document.getElementById('cartItem').innerHTML = cart.map((items) =>{
             let {pictures_1, name, price} = items;
-
-            // total = total + (price * quality);
             total = total + price;
             document.getElementById('total').innerHTML = "$" + total.toFixed(2);
-            // let quantityElement = document.querySelector('.cart-quality-input')[0];
-            // let quality = quantityElement.value;
-            // updateCartTotal();
             return(
                 `<div class = 'cart-item'>
                 <div class="shoes-img-box cart-img">
@@ -65,7 +60,6 @@ function displaycart(a){
                     <h1 class="shoes-name">${name}</h1> 
                     <h2 class="shoes-price"> $ ${price}</h2>
                 </div> `
-                // <input class="cart-quality-input" type="number" value="1"> 
                 +
                 "<img src='/icons/trash.svg' alt='' class='fa-solid fa-trash' onclick = 'delElement("+(j++)+")'></img></div>"
                 
@@ -75,15 +69,3 @@ function displaycart(a){
 
         }
     }
-
-    // function updateCartTotal() {
-    //     // let cartItemContainer = document.querySelector('.cart-item-box');
-    //     let cartRows = document.querySelector('.cart-item');
-    //     for(let i = 0; i < cartRows.length; i++){
-    //         let cartRow = cartRows[i];
-    //         let priceElement = cartRow.getElementById('total');
-    //         let quantityElement = cartRow.querySelector('.cart-quality-input');
-    //         let quality = quantityElement.value;
-    //         console.log(priceElement, quality);
-    //     }
-    // }
